@@ -33,8 +33,8 @@ class Input extends Component {
         let { action } = this.state;
         return (
             <div>
-                <input type="text" onChange={this.handleChange} value={action}/>
-                <button onClick={this.addTodo}>add todo</button>
+                <input type="text" onChange={this.handleChange} value={action} className="txt-todo"/>
+                <button onClick={this.addTodo} className="btn btn-success">add todo</button>
             </div>
         )
     }

@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Input from './Input';
 import ListTodo from './ListTodo';
+import ModalTodo from './ModalTodo';
 
 class Todo extends Component {
     state = {
@@ -35,6 +36,17 @@ class Todo extends Component {
             .catch(err => console.log(err));
     }
 
+    handleClose = () => {
+        this.setState({
+            show: false,
+            todo: {}
+        });
+    }
+
+    editTodo = (todo) => {
+        this.refs.ModalTodo.show(todo);
+    }
+
     render() {
         let { todos } = this.state;
 
@@ -42,7 +54,8 @@ class Todo extends Component {
             <div>
                 <h1>My Todo(s)</h1>
                 <Input getTodos={this.getTodos}/>
-                <ListTodo todos={todos} deleteTodo={this.deleteTodo} />
+                <ListTodo todos={todos} deleteTodo={this.deleteTodo} editTodo={this.editTodo} />
+                <ModalTodo ref="ModalTodo" getTodos={this.getTodos}></ModalTodo>
             </div>
         )
     }

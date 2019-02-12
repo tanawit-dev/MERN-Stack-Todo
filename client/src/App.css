@@ -6,7 +6,7 @@
   margin-right: auto;
 }
 
-input {
+.txt-todo {
   height: 40px;
   width: 50%;
   border: none;
@@ -16,23 +16,19 @@ input {
   color: #787a80;
 }
 
-input:focus {
+.txt-todo:focus {
   outline: none;
 }
 
-button {
-  width: 25%;
-  height: 45px;
+.btn {
   border: none;
   margin-left: 10px;
-  font-size: 25px;
-  background: #101113;
   border-radius: 5px;
-  color: #787a80;
+  color: white;
   cursor: pointer;
 }
 
-button:focus {
+.btn:focus {
   outline: none;
 }
 
@@ -42,6 +38,7 @@ ul {
   padding: 15px;
   background: #171a1f;
   border-radius: 5px;
+  margin-top: 10px
 }
 
 li {
@@ -51,17 +48,32 @@ li {
   background: #282c34;
   border-radius: 5px;
   overflow-wrap: break-word;
-  cursor: pointer;
+}
+
+li > .li-todo {
+  width: 40%;
+  color: white;
+  float: right;
+}
+
+.btn-edit {
+  background: #ffaa00;
+  float: right;
+}
+
+.btn-remove {
+  background: #e63900;
+  float: right;
 }
 
 @media only screen and (min-width: 300px) {
   .App {
     width: 80%;
   }
-  input {
+  .txt-todo {
     width: 100%
   }
-  button {
+  .btn {
     width: 100%;
     margin-top: 15px;
     margin-left: 0;
@@ -72,10 +84,10 @@ li {
   .App {
     width: 60%;
   }
-  input {
+  .txt-todo {
     width: 50%;
   }
-  button {
+  .btn {
     width: 30%;
     margin-left: 10px;
     margin-top: 0;
