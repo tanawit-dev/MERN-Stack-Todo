@@ -26,4 +26,12 @@ router.delete('/todos/:id', (req, res, next) => {
         .catch(next);
 });
 
+router.put('/todos/:id', (req, res, next) => {
+    if (req.body.action && req.params.id) {
+        Todo.findOneAndUpdate({"_id": req.params.id}, req.body)
+            .then(data => res.json(data))
+            .catch(next);
+    }
+})
+
 module.exports = router;
